@@ -1,0 +1,74 @@
+---
+import Card from "../components/Card.astro";
+import Blog from "../components/landing/Blog.astro";
+import Calendar from "../components/landing/Calendar.astro";
+import Gmail from "../components/landing/Gmail.astro";
+import LastProject from "../components/landing/LastProject.astro";
+import Linkedin from "../components/landing/Linkedin.astro";
+import Presentation from "../components/landing/Presentation.astro";
+import Techs from "../components/landing/Techs.astro";
+import Weather from "../components/landing/Weather.astro";
+---
+
+<style>
+    main {
+        height: calc(100vh - 140px);
+        width: 100%;
+        padding-top: 40px;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: 1fr .5fr repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    @media (max-width:1200px) {
+        main {
+            grid-template-columns: 1fr .5fr repeat(3, 1fr);
+
+        }
+    }
+
+    @media (max-width:860px) {
+        main {
+            height: unset;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+            padding-top: 70px;
+        }
+    }
+</style>
+<main>
+
+    <Card name="presentation">
+        <Presentation />
+    </Card>
+    <Card name="gmail">
+        <Gmail />
+    </Card>
+    <Card name="calendar">
+        <Calendar />
+    </Card>
+    <Card name="blogs">
+        <Blog />
+    </Card>
+    <Card name="linkedin">
+        <Linkedin />
+    </Card>
+    <Card name="techs">
+        <Techs />
+    </Card>
+    <Card name="last-project">
+        <LastProject />
+    </Card>
+    <Card name="weather">
+        <Weather />
+    </Card>
+    <!-- <Card name="gh-stats-graph">
+    </Card>
+    <Card name="gh-activity">
+
+    </Card> -->
+</main>

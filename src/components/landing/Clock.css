@@ -1,0 +1,5 @@
+.clock {
+  color: var(--light-fg);
+  font-size: 52px;
+  font-weight: 200;
+}

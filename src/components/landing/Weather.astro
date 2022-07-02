@@ -1,0 +1,97 @@
+---
+import Clock from "./Clock"
+
+
+const API_BASE_URL = "http://api.weatherapi.com/v1/current.json"
+const { location, current, forecast } = await fetch(API_BASE_URL + `?q=auto:ip&key=${import.meta.env.WEATHER_API_KEY}&days=3&lang=es`).then(res => res.json()).catch(err => console.log(err))
+
+const { name, localtime } = location
+const { temp_c, feelslike_c, condition } = current
+const { text, icon } = condition
+
+
+
+
+
+---
+
+<style>
+    h4 {
+        display: block;
+        color: var(--light-fg);
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    p {
+        display: block;
+        color: var(--fg);
+
+    }
+
+    .current {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .current .icon {
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .current .icon img {
+        filter: invert(1) saturate(0);
+        border-radius: 20px;
+        background-color: #131313;
+    }
+
+    .current .icon .flex-col {
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        gap: 6px;
+
+    }
+
+    .current .icon .flex-col small {
+        color: var(--fg);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .current .icon .flex-col p {
+        color: var(--light-fg);
+        font-size: 18px;
+        font-weight: 600;
+
+    }
+
+    .clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+    }
+</style>
+
+
+
+<div class="current">
+    <div class="text">
+        <h4>{name}</h4>
+        <p>{text}</p>
+    </div>
+    <div class="icon">
+        <div class="flex-col">
+            <p>{temp_c} °C</p>
+            <small> {feelslike_c} °C ST</small>
+        </div>
+        <img src={icon} alt={text} width="48" height="48">
+    </div>
+</div>
+<div class="clock">
+    <Clock client:idle />
+</div>

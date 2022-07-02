@@ -1,0 +1,97 @@
+---
+const { name } = Astro.props
+---
+
+<style>
+    section {
+        padding: 20px;
+        background-color: var(--card-bg);
+        border-radius: 35px;
+    }
+
+    .gmail {
+        grid-column: 1/3;
+        grid-row: 4/5;
+        transition: transform .2s ease-in-out;
+    }
+
+    .gmail:hover {
+        transition: transform .2s ease-in-out;
+        transform: scale3d(1.04, 1.04, 1.04);
+    }
+
+    .presentation {
+        grid-column: 1/3;
+        grid-row: 1/4;
+
+    }
+
+    .calendar {
+        grid-column: 3/6;
+        grid-row: 1/2;
+        padding: 0;
+    }
+
+    .blogs {
+        grid-column: 6/8;
+        grid-row: 1/6;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 6px;
+        overflow: hidden;
+    }
+
+    .last-project {
+        grid-column: 3/6;
+        grid-row: 2/8;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .linkedin {
+        grid-column: 1/3;
+        grid-row: 5/6;
+        transition: transform .2s ease-in-out;
+
+
+    }
+
+    .linkedin:hover {
+        transition: transform .2s ease-in-out;
+        transform: scale3d(1.04, 1.04, 1.04);
+    }
+
+    .techs {
+        grid-column: 1/3;
+        grid-row: 6/8;
+    }
+
+    .weather {
+        grid-column: 6/8;
+        grid-row: 6/8;
+
+    }
+
+
+    @media (max-width:1200px) {
+
+        .blogs,
+        .weather {
+            display: none;
+        }
+    }
+
+    @media (max-width:860px) {
+
+        .blogs,
+        .weather {
+            display: block;
+        }
+    }
+</style>
+
+<section class={name}>
+    <slot />
+</section>

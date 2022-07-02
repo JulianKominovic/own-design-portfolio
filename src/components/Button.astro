@@ -1,0 +1,35 @@
+---
+const { onClick, classes } = Astro.props
+
+---
+
+<style>
+    button {
+        background-color: var(--accent-color);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 0 30px 0 var(--accent-color);
+        cursor: pointer;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .active {
+        color: var(--dark-fg);
+        background-color: var(--accent-color);
+        box-shadow: 0 0 30px 0 var(--accent-color);
+    }
+
+    .bg-black {
+        background-color: #131313;
+        box-shadow: none;
+        font-size: 24px;
+        color: var(--lighter-fg);
+    }
+</style>
+<button onclick={onClick} class={classes}>
+    <slot />
+</button>

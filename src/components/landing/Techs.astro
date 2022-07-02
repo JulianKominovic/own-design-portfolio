@@ -1,0 +1,62 @@
+---
+import Button from "../Button.astro";
+import LinkButton from "../LinkButton.astro";
+import { ReactIcon, ExpressIcon, BashIcon, NodeIcon } from "../../assets/icons/Icons"
+---
+
+<style>
+    article {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    h6 {
+        color: var(--lighter-fg);
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    div {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    article:global(a) {
+        width: 100%;
+    }
+
+    @media (max-width:860px) {
+        div {
+            margin: 20px 0;
+        }
+
+    }
+</style>
+
+<article>
+    <h6>
+        Tecnologías
+    </h6>
+    <div>
+        <Button classes="bg-black">
+            <ReactIcon />
+        </Button>
+        <Button classes="bg-black">
+            <ExpressIcon />
+        </Button>
+        <Button classes="bg-black">
+            <NodeIcon />
+        </Button>
+        <Button classes="bg-black">
+            <BashIcon />
+        </Button>
+    </div>
+    <LinkButton href="/techs" target="_self">
+        Ver teconologías
+    </LinkButton>
+</article>

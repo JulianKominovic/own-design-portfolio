@@ -1,0 +1,38 @@
+---
+import CalendarDay from "./CalendarDay.astro"
+import dayjs from "dayjs"
+import { WEEKDAYS } from "../../utils/WEEKDAYS";
+const DAYJS = dayjs()
+
+
+
+---
+
+<style>
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        color: var(--light-fg);
+        padding: 0 20px;
+    }
+</style>
+
+<article>
+    {Array.from(Array(3).keys()).map((_, number) => {
+    const date = DAYJS.subtract(2-number+1,"days");
+    return (
+    <CalendarDay number={date.get("date")} weekdayName={WEEKDAYS[date.get("day")]} />
+    );
+    })}
+
+    <CalendarDay number={DAYJS.get("date")} weekdayName={WEEKDAYS[DAYJS.get("day")]} classes="active" />
+
+    {Array.from(Array(3).keys()).map((_, number) => {
+    const date = DAYJS.add(number + 1,"days");
+    return (
+    <CalendarDay number={date.get("date")} weekdayName={WEEKDAYS[date.get("day")]} />
+    );
+    })}
+</article>

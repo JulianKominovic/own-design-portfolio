@@ -1,0 +1,39 @@
+---
+import { GithubIcon, GmailIcon } from "../../assets/icons/Icons";
+import profile from "../../assets/imgs/profile.png"
+---
+
+<style>
+    h4 {
+        color: var(--light-fg);
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    p {
+        color: var(--fg);
+
+    }
+
+    img {
+        height: auto;
+        max-height: 80%;
+        object-fit: scale-down;
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: auto;
+        background: radial-gradient(#131313, #1f1f1f);
+        border-radius: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    rect[data-testid="card-bg"] {
+        stroke-opacity: 0 !important;
+        fill: var(--card-bg) !important;
+    }
+</style>
+<img src={profile} alt="Foto de perfil de Julian kominovic">
+<h4>Julian E. Kominovic</h4>
+<p>Frontend developer.</p>

@@ -1,0 +1,113 @@
+---
+import { ReactIcon, RightArrow } from "../../assets/icons/Icons";
+import simpleCalendar from "../../assets/imgs/simple-calendar.png"
+import Anchor from "../Anchor.astro";
+import LinkButton from "../LinkButton.astro";
+---
+
+<style>
+    header {
+        background: radial-gradient(#383838, #131313);
+        border-radius: 20px;
+        height: 60%;
+
+    }
+
+    header>img {
+        width: auto;
+        height: 100%;
+        margin-inline: auto;
+        display: block;
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    main {
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--light-fg);
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    .top .icon {
+        padding: 4px 12px;
+        background-color: #353535;
+        display: flex;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    p {
+        color: var(--fg);
+        margin-bottom: 20px;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer :global(a) {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    footer :global(a:last-of-type) {
+        color: var(--light-fg);
+        font-weight: 600;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 100%;
+        transition: transform .2s ease-in-out;
+
+    }
+
+    footer :global(a:last-of-type:hover) {
+        transform: translateX(10px);
+        transition: transform .2s ease-in-out;
+    }
+</style>
+
+<header>
+    <img src={simpleCalendar} alt="Simple calendar app">
+</header>
+<main>
+    <div class="top">
+        <h4>Simple Calendar</h4>
+        <div class="icon">
+            <ReactIcon />
+        </div>
+    </div>
+
+    <p>
+        Challenge de Frontend mentor. Tablero que muestra la cantidad de tiempo invertido en cada actividad. Hecho en
+        React
+        y Styled components, usando ademas useContext.</p>
+
+    <footer>
+        <LinkButton href="https://jk-simple-calendar.netlify.app/" target="_self">
+            Demo
+        </LinkButton>
+        <Anchor href="https://github.com/JulianKominovic/react-calendar" target="_self">
+            Repo
+            <RightArrow />
+
+        </Anchor>
+    </footer>
+</main>
