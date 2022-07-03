@@ -48,7 +48,6 @@
   flex-direction: column;
   gap: 20px;
   padding: 0 10px 0 0;
-  margin-bottom: 500px;
 }
 .blog-list__list-wrapper {
   overflow-y: auto;

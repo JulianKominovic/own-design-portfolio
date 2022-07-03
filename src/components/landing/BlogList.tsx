@@ -2,7 +2,9 @@ import "./BlogList.css";
 import { useEffect, useState } from "preact/hooks";
 import MinicardBlog from "../blogs/MinicardBlog";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = import.meta.env.DEV
+  ? "http://localhost:4000"
+  : "https://static-blog-posts.herokuapp.com/";
 
 const handleClick = (setSelectedIndex, selectedIndex, index) =>
   selectedIndex === index ? setSelectedIndex(-1) : setSelectedIndex(index);
