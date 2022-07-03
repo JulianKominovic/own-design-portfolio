@@ -3,7 +3,7 @@ const MinicardBlog = ({ image, title, description, blogKey }) => {
   return (
     <article className="mini-card__blog">
       <header>
-        <img src={image} alt={title} />
+        <img src={image} alt={title} height="200" />
       </header>
       <h4>{title}</h4>
       <p>{description}</p>
